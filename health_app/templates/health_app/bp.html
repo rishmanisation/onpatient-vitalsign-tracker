@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Blood Pressure
+        </title>
+    </head>
+    <body>
+        <h3>The following blood pressure values have been recorded for you (most recent first):</h3>
+        {% if blood_pressure %}
+        <ul>
+            {% for bp in blood_pressure %}
+                <li>{{ bp }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            No bp available
+        {% endif %}
+    </body> 
+</html>

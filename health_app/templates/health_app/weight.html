@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Weight
+        </title>
+    </head>
+    <body>
+        <h3>The following weight values are recorded for you (most recent first):</h3>
+        {% if weight %}
+        <ul>
+            {% for w in weight %}
+                <li>{{ w.patient_weight }}lbs</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            No weight available
+        {% endif %}
+    </body>
+</html>

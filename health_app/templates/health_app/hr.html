@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Heart Rate
+        </title>
+    </head>
+    <body>
+        {% if heart_rate %}
+            <h3>The following heart rate values are recorded for you (most recent first):</h3>
+            {% for hr in heart_rate %}
+            <ul>
+                <li>{{ hr.patient_hr }}bpm : {{ hr.status }}</li>
+            </ul>
+        {% endfor %}
+        {% else %}
+            No hr available
+        {% endif %}
+        <h3>Heart rate under 60 is low, over 80 is high.</h3>
+    </body>
+</html>

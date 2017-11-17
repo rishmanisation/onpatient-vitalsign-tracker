@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Current patient information </title>
+    </head>
+    <body>
+        <h1>Your current information</h1>
+        {% if patients %}
+            <ul>
+                {% for patient in patients %}
+                    <li>ID: {{ patient.id }}</li>
+                    <li>Name: {{ patient.patient_name }}</li>
+                    <li>Gender: {{ patient.patient_sex }}</li>
+                    <li>DoB: {{ patient.patient_dob }}</li>
+                    <li>Contact Information: 
+                        {% if contacts %}
+                            <ul>
+                                {% for contact in contacts %}
+                                    <li>{{ contact }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            No contact information available.
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No patients available.</p>
+        {% endif %}
+        <h3>In case anything needs to be changed, please contact your healthcare provider.</h3>
+    </body>
+</html>

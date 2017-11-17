@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Body Mass Index Tracker
+        </title>
+    </head>
+    <body>
+        <h3>The following BMI values are recorded for you (most recent first):</h3> 
+        {% if body_mass_index %}
+            <ul>
+                {% for bmi in body_mass_index %}
+                    <li>{{ bmi.patient_bmi }} : {{ bmi.status }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h3>No bmi available</h3>
+        {% endif %}
+        <h3>A BMI of around 25 is considered to be healthy. BMI over 30 is obese and BMI under 20 is underweight.</h3>
+    </body>
+</html>
