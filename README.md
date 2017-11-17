@@ -42,6 +42,9 @@ LOGIN_REDIRECT_URL
 
 ### Changelog
 
+11/16/17:
+- The post-login landing page is the latest to receive a major facelift! This is a partial update, with the rest of it (along with updates for the trackers) coming shortly. Kudos once against to the [Bootstrap](http://getbootstrap.com/) team.
+
 11/15/17:
 - Compatibility with Django 1.11.7 tested. Works without issues.
 - Cool new front-end for the login page! Thanks to the [Bootstrap](http://getbootstrap.com/) team. Front-end for the rest of the application coming soon.

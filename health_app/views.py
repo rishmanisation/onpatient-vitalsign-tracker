@@ -9,10 +9,15 @@ from social_django.models import UserSocialAuth
 
 # Create your views here.
 def index(request):
-    return render(request, 'health_app/index.html')
+    load_patient_information()
+    patients = Patient.objects.order_by('-id')
+    patient = patients[0]
+    context = {
+        'patient': patient
+    }
+    return render(request, 'health_app/index.html', context)
 
 def patient(request):
-    load_patient_information()
     load_vitals()
     patients = Patient.objects.order_by('-id')
     contacts = patients[0].patient_contact.split(",") 
